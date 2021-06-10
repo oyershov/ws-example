@@ -1,0 +1,16 @@
+{
+    "name": "ws-example",
+    "version": "0.0.1",
+    "main": "client.js",
+    "description": "WS example with Node.js",
+    "author": "Oleksandr Yershov <oyershov.work@gmail.com>",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1",
+        "start": "node server.js"
+    },
+    "keywords": ["ws", "websocket", "javascript"],
+    "license": "MIT",
+    "dependencies": {
+        "websocket": "^1.0.29"
+    }
+}

@@ -39,7 +39,7 @@ wsServer.on('request', function(request) {
     const startInterval = () => {
         if (interval) {
             myInterval = setInterval(() => {
-                connection.sendUTF(normal_distribution_random(30000, 35000));
+                connection.sendUTF(normal_distribution_random(35000, 45000));
             }, interval);
         }
     }

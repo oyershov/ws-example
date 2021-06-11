@@ -25,7 +25,17 @@ interface Props {
 }
 
 export const OutlinedCard = ({price, setPrice}: Props) => {
+  const [currentPrice, setCurrentPrice] = React.useState(0);
+  const [isPositive, setIsPositive] = React.useState(true);
   const classes = useStyles();
+  const priceColor = currentPrice ? (
+    isPositive ? 'green' : 'red'
+  ) : 'black';
+
+  React.useEffect(() => {
+    setIsPositive(price - currentPrice >= 0);
+    setCurrentPrice(price);
+  }, [price])
 
   return (
     <Card className={classes.root} variant="outlined">
@@ -43,8 +53,8 @@ export const OutlinedCard = ({price, setPrice}: Props) => {
           />&nbsp;Bitcoin price
         </Typography>
 
-        <Typography variant="body2" component="p">
-          ${price}
+        <Typography variant="h5" component="p" style={{textAlign: 'center', color: priceColor}}>
+          ${(+price).toFixed(2)}
         </Typography>
       </CardContent>
       <CardActions>
